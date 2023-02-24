@@ -15,5 +15,3 @@ python create_dataset.py
   
       
 * Settings can be changed in `csi/pcapTodf.py`
-
-## Sample
