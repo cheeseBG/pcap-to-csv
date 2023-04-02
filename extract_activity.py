@@ -17,7 +17,7 @@ act_time = {
 
 pcap_fname = os.listdir('data/pcap')[0]
 
-df = pcap_to_df(os.path.join('data/pcap', pcap_fname))
+df = pcap_to_df(os.path.join('data/pcap', pcap_fname), amp=True, add_MAC=False, add_time=False)
 
 for item in act_time:
     start_time, end_time = act_time[item]
