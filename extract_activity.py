@@ -7,17 +7,16 @@ os.makedirs('data/csv/', exist_ok=True)
 save_dir = 'data/csv/'
 
 act_time = {
-    'Empty': ['2023-03-12 16:58:00', '2023-03-12 17:38:00'],
-    'Sitting': ['2023-03-12 17:40:00', '2023-03-12 17:55:00'],
-    'Walking': ['2023-03-12 17:56:30', '2023-03-12 18:06:00'],
-    'Lying': ['2023-03-12 18:07:00', '2023-03-12 18:17:00'],
-    'Standing': ['2023-03-12 18:18:00', '2023-03-12 18:28:00']
+    'empty': ['2023-06-05 23:35:00', '2023-06-06 12:05:00'],
+    'sit': ['2023-06-06 12:10:00', '2023-06-06 12:25:00'],
+    'walk': ['2023-06-06 12:51:00', '2023-06-06 13:01:00'],
+    'stand': ['2023-06-06 12:37:00', '2023-06-06 12:47:00']
 }
 
 
 pcap_fname = os.listdir('data/pcap')[0]
 
-df = pcap_to_df(os.path.join('data/pcap', pcap_fname), amp=True, add_MAC=False, add_time=False)
+df = pcap_to_df(os.path.join('data/pcap', pcap_fname), amp=False, add_MAC=True, add_time=True)
 
 for item in act_time:
     start_time, end_time = act_time[item]
